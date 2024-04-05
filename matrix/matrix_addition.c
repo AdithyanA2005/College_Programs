@@ -12,7 +12,6 @@ int main() {
     for (int j = 0; j < n; j++) {
       scanf("%d", &a[i][j]);
     }
-    printf("\n");
   }
   
   // Add values of matrix B
