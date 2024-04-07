@@ -1,19 +1,19 @@
 #include <stdio.h>
 
 int main() {
-  int num, flag;
+  int num, isPrime;
 
   printf("Enter number: ");
   scanf("%d", &num);
 
-  for (int i = 0; i <= num; i++) {
-    flag = 1;
+  for (int i = 2; i <= num; i++) {
+    isPrime = 1;
 
     for (int j = 2; j < i; j++) {
-      if (i % j == 0) flag = 0;
+      if (i % j == 0) isPrime = 0;
     }
 
-    if (flag == 1)
+    if (isPrime == 1)
       printf("%d ", i);
   }
 }
