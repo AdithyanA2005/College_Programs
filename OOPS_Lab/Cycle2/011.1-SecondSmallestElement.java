@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 class SecondSmallestElement1 {
@@ -14,8 +13,8 @@ class SecondSmallestElement1 {
       arr[i] = scanner.nextInt(); 
     }
 
-    int smallest = arr[0];
-    int secondSmallest = arr[0];
+    int smallest = Integer.MAX_VALUE;
+    int secondSmallest = Integer.MAX_VALUE;
 
     for (int i = 0; i < size; i++) {
       if (arr[i] < smallest) {
