@@ -14,8 +14,8 @@ class SecondLargestElement2 {
     for (int i = 0; i < size; i++) 
       arr[i] = scanner.nextInt();
 
-    int largest = arr[0];
-    int secondLargest = arr[0];
+    int largest = Integer.MIN_VALUE;
+    int secondLargest = Integer.MIN_VALUE;
 
     for (int i = 0; i < arr.length; i++) {
       if (arr[i] > largest) {
