@@ -2,7 +2,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class MultiThreadOddEvenTill100 {
+class MultiThreadOddEvenTill100 {
   private static int count = 1;
   private static final int MAX = 100;
   private static final Lock lock = new ReentrantLock();
@@ -25,7 +25,7 @@ public class MultiThreadOddEvenTill100 {
         while (!isOdd) {
           oddCondition.await();
         }
-        System.out.print(count + " ");
+        System.out.println(count + " ");
         count++;
         isOdd = false;
         evenCondition.signal();
@@ -44,7 +44,7 @@ public class MultiThreadOddEvenTill100 {
         while (isOdd) {
           evenCondition.await();
         }
-        System.out.print(count + " ");
+        System.out.println(count + " ");
         count++;
         isOdd = true;
         oddCondition.signal();
