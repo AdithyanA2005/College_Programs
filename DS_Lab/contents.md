@@ -10,3 +10,7 @@
 - DS_Lab/008-queue-using-array.c 
 - DS_Lab/009-circular-queue-using-array.c 
 - DS_Lab/010-insertion_sort.c 
+- DS_Lab/011-infix_to_postfix.c
+- DS_Lab/012-postfix_evaluation.c
+
+
