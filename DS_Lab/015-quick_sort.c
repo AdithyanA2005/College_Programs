@@ -13,7 +13,7 @@ int partition(int arr[], int low, int high) {
 
   while (i < j) {
     while (i < high && arr[i] <= pivot) i++;
-    while (j > low && arr[i] > pivot) j--;
+    while (j > low && arr[j] > pivot) j--;
     if (i < j) swap(arr, i, j);
   }
 
