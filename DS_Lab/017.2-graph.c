@@ -3,7 +3,8 @@
 #define MAX 100
 
 int queue[MAX], front = -1, rear = -1;
-int adj[MAX][MAX], visited[MAX], noOfNodes, noOfEdges;
+int adj[MAX][MAX] = {0}, visited[MAX] = {0};
+int noOfNodes, noOfEdges;
 
 void enqueue(int data) {
   if (rear == MAX - 1) return;
@@ -20,7 +21,7 @@ int dequeue() {
 
 void dfs(int vertex) {
   visited[vertex] = 1;
-  printf("%d", vertex);
+  printf("%d ", vertex);
 
   for (int i = 1; i <= noOfNodes; i++) {
     if (adj[vertex][i] == 1 && visited[i] == 0) {
@@ -48,7 +49,7 @@ void bfs(int startVertex) {
 }
 
 void resetVisited() {
-  for (int i = 0; i < noOfNodes; i++)
+  for (int i = 1; i <= noOfNodes; i++)
     visited[i] = 0;
 }
 
@@ -61,7 +62,7 @@ int main() {
   printf("Enter no of edges: ");
   scanf("%d", &noOfEdges);
 
-  // Create a adjacency matrix
+  // Create an adjacency matrix
   printf("Enter edges as a pair of vertices:\n");
   for (int i = 0; i < noOfEdges; i++) {
     int u, v;
@@ -82,44 +83,33 @@ int main() {
     switch (choice) {
       case 1:
         resetVisited();
-        printf("Enter the start vertex for BFS: ");
+        printf("Enter start vertex: ");
         scanf("%d", &startVertex);
-        printf("BFS traversal starting from vertex %d:\n", startVertex);
+        printf("BFS: ");
 
-        if (!visited[startVertex]) {
-          bfs(startVertex);
-        }
-        // Perform BFS for all unvisited nodes (for connected components)
-        for (int i = 1; i <= noOfNodes; i++) {
-          if (!visited[i]) {
-            bfs(i);
-          }
-        }
+        bfs(startVertex);
+        for (int i = 1; i <= noOfNodes; i++) 
+          if (visited[i] == 0) bfs(i);
+
         printf("\n");
         break;
 
       case 2:
         resetVisited();
-        printf("Enter the start vertex for DFS: ");
+        printf("Enter start vertex: ");
         scanf("%d", &startVertex);
-        printf("DFS traversal starting from vertex %d:\n", startVertex);
+        printf("DFS: ");
 
-        if (!visited[startVertex]) {
-          dfs(startVertex);
-        }
-        // Perform DFS for all unvisited nodes (for connected components)
-        for (int i = 1; i <= noOfNodes; i++) {
-          if (!visited[i]) {
-            dfs(i);
-          }
-        }
+        dfs(startVertex);
+        for (int i = 1; i <= noOfNodes; i++) 
+          if (visited[i] == 0) dfs(i);
+
         printf("\n");
         break;
-
       default:
         printf("\nProgram terminated\n");
         doRun = 0;
     }
   }
+  return 0;
 }
-
