@@ -72,6 +72,13 @@ int main() {
     for (int j = 0; j < resources; j++)
       need[i][j] = max[i][j] - allocation[i][j];
 
+  printf("\nNeed Matrix (Max - Allocation):\n");
+  for (int i = 0; i < processes; i++) {
+    for (int j = 0; j < resources; j++)
+      printf("%d ", need[i][j]);
+    printf("\n");
+  }
+
   if (isSafe(processes, resources, available, max, allocation, need, safeSeq)) {
     printf("\nTHE SYSTEM IS IN A SAFE STATE\nSafe Sequence: ");
     for (int i = 0; i < processes; i++) {
