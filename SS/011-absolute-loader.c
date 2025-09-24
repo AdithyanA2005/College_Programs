@@ -1,3 +1,15 @@
+// 1. Open the object file.
+// 2. Create memory of size 4096 and set all bytes to 0.
+// 3. Read the file line by line:
+//
+//    * If it’s a header (`H`), get the starting address.
+//    * If it’s a text record (`T`), read the address and store each byte from
+//    the record into memory at that address.
+//    * If it’s the end record (`E`), stop reading.
+// 4. Close the file.
+// 5. Print all non-zero memory locations.
+// 6. Print “Program loaded successfully.”
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

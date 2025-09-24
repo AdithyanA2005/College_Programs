@@ -1,4 +1,29 @@
-/* single-pass macro processor - small & working (no args) */
+// 1. **Initialize macro table** – Prepare a table to store macro names and
+// their body lines.
+//
+// 2. **Open input and output files** – Read from `macro-input.txt` and write to
+// `macro-output.txt`.
+//
+// 3. **Read input file line by line**:
+//
+//    * **Macro Definition (`NAME MACRO`)**:
+//
+//      * Store macro name.
+//      * Keep reading lines and store them as macro body until `MEND`.
+//    * **Macro Call**:
+//
+//      * If the first word (or second, if there’s a label) matches a macro
+//      name:
+//
+//        * Replace the macro call with its stored body in the output file.
+//        * If there’s a label, attach it to the first line of the macro body.
+//    * **Normal Line**:
+//
+//      * If it’s not a macro definition or call, copy the line directly to
+//      output.
+//
+// 4. **Finish** – Close files and display “Done. See macro-output.txt”.
+
 #include <stdio.h>
 #include <string.h>
 

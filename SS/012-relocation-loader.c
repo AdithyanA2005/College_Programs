@@ -1,3 +1,23 @@
+// 1. **Set up memory** – Make an empty memory space to store the program.
+//
+// 2. **Open the object program file** – This file has code to be loaded.
+//
+// 3. **Ask for load address** – The user gives the memory address where the
+// program should start.
+//
+// 4. **Read the object file line by line**:
+//
+//    * **Header (H)**: Note the original start address of the program.
+//    * **Text (T)**: Copy program bytes into memory at the correct location
+//    (original address + load address).
+//    * **Modification (M)**: Fix addresses in the program by adding the load
+//    address.
+//    * **End (E)**: Stop reading the file.
+//
+// 5. **Show memory content** – Print the memory where the program is loaded.
+//
+// 6. **Finish** – Program is successfully relocated and ready to run.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
