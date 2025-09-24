@@ -1,0 +1,9 @@
+INCR    MACRO
+        LDA A
+        ADD B
+        STA A
+        MEND
+
+START   1000
+        INCR
+        END

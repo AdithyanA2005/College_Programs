@@ -3,4 +3,5 @@ test*.c
 *.class
 !SS/pass-optab.txt
 !SS/pass-symtab.txt
+!SS/macro-input.txt
 
